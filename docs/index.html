@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock & Memo</title>
+    <style>
+      input,
+      time {
+        display: block;
+        text-align: center;
+        width: 100%;
+        font-size: 8rem;
+      }
+      #time {
+        color: blue;
+      }
+      #second {
+        color: skyblue;
+        font-size: 0.8em;
+      }
+    </style>
+  </head>
+  <body>
+    <input />
+    <time><span id="time"></span><span id="second"></span></time>
+    <script>
+      function paddingZero(num) {
+        if (num < 10) {
+          return `0${num}`;
+        } else {
+          return `${num}`;
+        }
+      }
+      setInterval(() => {
+        const now = new Date();
+        const hours = paddingZero(now.getHours());
+        const minutes = paddingZero(now.getMinutes());
+        const seconds = paddingZero(now.getSeconds());
+        time.innerText = `${hours}:${minutes}`;
+        second.innerText = `:${seconds}`;
+      }, 100);
+    </script>
+  </body>
+</html>
