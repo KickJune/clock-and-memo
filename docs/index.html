@@ -34,7 +34,7 @@
       }
       setInterval(() => {
         const now = new Date();
-        const hours = paddingZero(now.getHours());
+        const hours = now.getHours();
         const minutes = paddingZero(now.getMinutes());
         const seconds = paddingZero(now.getSeconds());
         time.innerText = `${hours}:${minutes}`;
